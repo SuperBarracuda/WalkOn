@@ -19,10 +19,16 @@ class HealthManager {
         }
         
         
+        
         if HKHealthStore.isHealthDataAvailable() {
-            // Add code to use HealthKit here.
             
-
+            do {
+                let sex = try healthStore.biologicalSex()
+                print("Biological sex = \(sex.description)")
+            } catch {
+                
+            }
+            
         }
     }
     
