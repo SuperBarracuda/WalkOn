@@ -34,8 +34,6 @@
 		6AC40F0E265295EF00EC5E40 /* WalkOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC40F12265295EF00EC5E40 /* WalkOnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkOnTests.swift; sourceTree = "<group>"; };
 		6AC40F14265295EF00EC5E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AC40F1D265295EF00EC5E40 /* WalkOnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkOnUITests.swift; sourceTree = "<group>"; };
-		6AC40F1F265295EF00EC5E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 			children = (
 				6AC40EFF265295EE00EC5E40 /* WalkOn */,
 				6AC40F11265295EF00EC5E40 /* WalkOnTests */,
-				6AC40F1C265295EF00EC5E40 /* WalkOnUITests */,
 				6AC40EFE265295EE00EC5E40 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,15 +99,6 @@
 				6AC40F14265295EF00EC5E40 /* Info.plist */,
 			);
 			path = WalkOnTests;
-			sourceTree = "<group>";
-		};
-		6AC40F1C265295EF00EC5E40 /* WalkOnUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6AC40F1D265295EF00EC5E40 /* WalkOnUITests.swift */,
-				6AC40F1F265295EF00EC5E40 /* Info.plist */,
-			);
-			path = WalkOnUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,9 +345,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkOn/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkOn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -380,9 +369,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkOn/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkOn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
