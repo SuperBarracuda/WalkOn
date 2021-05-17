@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A76445826529F1600CE8C7E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A76445726529F1600CE8C7E /* HealthKit.framework */; };
+		6A76445A26529F7A00CE8C7E /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A76445926529F7A00CE8C7E /* HealthManager.swift */; };
 		6AC40F01265295EE00EC5E40 /* WalkOnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC40F00265295EE00EC5E40 /* WalkOnApp.swift */; };
 		6AC40F03265295EE00EC5E40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC40F02265295EE00EC5E40 /* ContentView.swift */; };
 		6AC40F05265295EF00EC5E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC40F04265295EF00EC5E40 /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A76445526529F1600CE8C7E /* WalkOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkOn.entitlements; sourceTree = "<group>"; };
+		6A76445726529F1600CE8C7E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6A76445926529F7A00CE8C7E /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		6AC40EFD265295EE00EC5E40 /* WalkOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC40F00265295EE00EC5E40 /* WalkOnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkOnApp.swift; sourceTree = "<group>"; };
 		6AC40F02265295EE00EC5E40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A76445826529F1600CE8C7E /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A76445626529F1600CE8C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A76445726529F1600CE8C7E /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6AC40EF4265295EE00EC5E40 = {
 			isa = PBXGroup;
 			children = (
 				6AC40EFF265295EE00EC5E40 /* WalkOn */,
 				6AC40F11265295EF00EC5E40 /* WalkOnTests */,
 				6AC40EFE265295EE00EC5E40 /* Products */,
+				6A76445626529F1600CE8C7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,11 +90,13 @@
 		6AC40EFF265295EE00EC5E40 /* WalkOn */ = {
 			isa = PBXGroup;
 			children = (
+				6A76445526529F1600CE8C7E /* WalkOn.entitlements */,
 				6AC40F00265295EE00EC5E40 /* WalkOnApp.swift */,
 				6AC40F02265295EE00EC5E40 /* ContentView.swift */,
 				6AC40F04265295EF00EC5E40 /* Assets.xcassets */,
 				6AC40F09265295EF00EC5E40 /* Info.plist */,
 				6AC40F06265295EF00EC5E40 /* Preview Content */,
+				6A76445926529F7A00CE8C7E /* HealthManager.swift */,
 			);
 			path = WalkOn;
 			sourceTree = "<group>";
@@ -201,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC40F03265295EE00EC5E40 /* ContentView.swift in Sources */,
+				6A76445A26529F7A00CE8C7E /* HealthManager.swift in Sources */,
 				6AC40F01265295EE00EC5E40 /* WalkOnApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,13 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WalkOn/WalkOn.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkOn/Preview Content\"";
 				DEVELOPMENT_TEAM = 2E5XL3YJX2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,13 +388,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WalkOn/WalkOn.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkOn/Preview Content\"";
 				DEVELOPMENT_TEAM = 2E5XL3YJX2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
