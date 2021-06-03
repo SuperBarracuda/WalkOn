@@ -1,13 +1,22 @@
 import HealthKit
 
+extension Date {
+    
+    static func -(lhs: Date, rhs: Int) -> Date {
+        return Calendar.current.date(byAdding: .day, value: -rhs, to: lhs)!
+    }
+}
+
 class HealthManager {
     
     var healthStore: HKHealthStore?
+    var sevenDaysAgo: Date?
     
     init() {
         
         healthStore = HKHealthStore()
-        
+        let today = Date()
+        sevenDaysAgo = today - 7
         let readData: Set<HKObjectType> = [
                     HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
                     HKObjectType.characteristicType(forIdentifier: .bloodType)!,
@@ -51,7 +60,7 @@ class HealthManager {
     }
     
     func getDistanceWalked() {
-        let startDate = Date.init(timeIntervalSince1970: TimeInterval(1622246400))//Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        let startDate = sevenDaysAgo
 
         let endDate = Date()
 
@@ -84,7 +93,7 @@ class HealthManager {
 
           //   Get the start of the day
         
-         let startDate = Date.init(timeIntervalSince1970: TimeInterval(1622246400))//Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+         let startDate = sevenDaysAgo
 
           let date = Date()
 
@@ -94,7 +103,7 @@ class HealthManager {
           interval.day = 1
 
           //  Perform the Query
-          let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval)
+        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate! as Date, intervalComponents:interval)
 
           query.initialResultsHandler = { query, results, error in
 
@@ -103,7 +112,7 @@ class HealthManager {
               }
             var totalSteps: Double = 0
               if let myResults = results{
-                  myResults.enumerateStatistics(from: startDate, to: date) {
+                  myResults.enumerateStatistics(from: startDate!, to: date) {
                       statistics, stop in
 
                       if let quantity = statistics.sumQuantity() {
