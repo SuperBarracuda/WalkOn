@@ -8,6 +8,6 @@ struct WalkOnApp: App {
     }
     
     init() {
-        let healthManager = HealthManager()
+        _ = HealthManager()
     }
 }

@@ -67,7 +67,7 @@ class HealthManager {
 
         let endDate = Date()
 
-        print("Collecting workouts between \(startDate) and \(endDate)")
+        print("Collecting workouts between \(String(describing: startDate)) and \(endDate)")
 
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictEndDate)
 
