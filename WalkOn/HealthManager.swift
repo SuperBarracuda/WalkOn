@@ -11,6 +11,7 @@ class HealthManager {
         let readData: Set<HKObjectType> = [
                     HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
                     HKObjectType.characteristicType(forIdentifier: .bloodType)!,
+                    HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
                     HKObjectType.quantityType(forIdentifier: .stepCount)!,
                     HKObjectType.quantityType(forIdentifier: .bodyMass)!
                 ]
