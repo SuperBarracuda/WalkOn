@@ -80,7 +80,7 @@ class HealthManager {
                     DispatchQueue.main.async {
                         let totalDistance = sumQuantity.doubleValue(for:.mile())
                         distanceTotalLength = totalDistance
-                        print("Total distance covered = \(String(format:"%.2f", locale: Locale.current, distanceTotalLength)) Miles")
+                        print("Total distance covered = \(String(format:"%.1f", locale: Locale.current, distanceTotalLength)) Miles")
                     }
                 }
             }
