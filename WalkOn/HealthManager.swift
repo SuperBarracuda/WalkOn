@@ -39,7 +39,7 @@ class HealthManager {
                 
                 print("Biological sex = \(gender)")
                 
-                let totalDistance = getSteps()
+                getSteps()
                 
             } catch {
                 print("Encountered error = \(error)")
@@ -64,12 +64,12 @@ class HealthManager {
         
         var distanceTotalLength: Double = 0
         let statisticsSumQuery = HKStatisticsQuery(quantityType: HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!, quantitySamplePredicate: predicate, options: sumOption) {
-                [unowned self] (query, result, error) in
+                 (query, result, error) in
                 if let sumQuantity = result?.sumQuantity() {
                     DispatchQueue.main.async {
                         let totalDistance = sumQuantity.doubleValue(for:.mile())
                         distanceTotalLength = totalDistance
-                        print("Total distance covered = \(distanceTotalLength) Miles")
+                        print("Total distance covered = \(String(format:"%.2f", distanceTotalLength)) Miles")
                     }
                 }
             }
