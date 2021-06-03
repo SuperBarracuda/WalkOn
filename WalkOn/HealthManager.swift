@@ -22,6 +22,7 @@ class HealthManager {
                     HKObjectType.characteristicType(forIdentifier: .bloodType)!,
                     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
                     HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                    HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                     HKObjectType.quantityType(forIdentifier: .bodyMass)!
                 ]
         
@@ -51,6 +52,8 @@ class HealthManager {
                 getDistanceWalked()
                 
                 getStepCount()
+                
+                getCaloriesBurned()
                 
             } catch {
                 print("Encountered error = \(error)")
@@ -129,6 +132,33 @@ class HealthManager {
           }
 
           healthStore?.execute(query)
+    }
+    
+    func getCaloriesBurned() {
+        let startDate = sevenDaysAgo
+
+        let endDate = Date()
+
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictEndDate)
+
+        
+        let sumOption = HKStatisticsOptions.cumulativeSum
+        
+        
+        
+        var caloriesBurned: Double = 0
+        let statisticsSumQuery = HKStatisticsQuery(quantityType: HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!, quantitySamplePredicate: predicate, options: sumOption) {
+                 (query, result, error) in
+                if let sumQuantity = result?.sumQuantity() {
+                    DispatchQueue.main.async {
+                        let totalDistance = sumQuantity.doubleValue(for:.kilocalorie())
+                        caloriesBurned = totalDistance
+                        print("Total calories burned  = \(String(format:"%.0f", locale: Locale.current, caloriesBurned))")
+                    }
+                }
+            }
+        healthStore?.execute(statisticsSumQuery)
     }
     
 }
