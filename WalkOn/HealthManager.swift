@@ -39,8 +39,7 @@ class HealthManager {
                 
                 print("Biological sex = \(gender)")
                 
-                
-                getSteps()
+                let totalDistance = getSteps()
                 
             } catch {
                 print("Encountered error = \(error)")
@@ -58,18 +57,23 @@ class HealthManager {
 
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictEndDate)
 
-        let query = HKSampleQuery(sampleType: HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, results, error) in
-            
-            
-            if let results = results {
-                for item in results {
-                    print(item)
+        
+        let sumOption = HKStatisticsOptions.cumulativeSum
+        
+        
+        
+        var distanceTotalLength: Double = 0
+        let statisticsSumQuery = HKStatisticsQuery(quantityType: HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!, quantitySamplePredicate: predicate, options: sumOption) {
+                [unowned self] (query, result, error) in
+                if let sumQuantity = result?.sumQuantity() {
+                    DispatchQueue.main.async {
+                        let totalDistance = sumQuantity.doubleValue(for:.mile())
+                        distanceTotalLength = totalDistance
+                        print("Total distance covered = \(distanceTotalLength) Miles")
+                    }
                 }
             }
-            
-        }
-
-        healthStore?.execute(query)
+        healthStore?.execute(statisticsSumQuery)
     }
     
 }
