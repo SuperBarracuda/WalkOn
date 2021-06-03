@@ -6,27 +6,40 @@ class HealthManager {
         
         let healthStore = HKHealthStore()
         
-        //Request users permission
-        let allTypes = Set([HKObjectType.workoutType(),
-                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-                            HKObjectType.quantityType(forIdentifier: .heartRate)!])
-
-        healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
-            if !success {
-                // Handle the error here.
-            }
-        }
+        let readData: Set<HKObjectType> = [
+                    HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
+                    HKObjectType.characteristicType(forIdentifier: .bloodType)!,
+                    HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                    HKObjectType.quantityType(forIdentifier: .bodyMass)!
+                ]
         
+        let writeData: Set<HKSampleType> = []
+       healthStore.requestAuthorization(toShare: writeData, read: readData) { status, error in
+       }
         
         
         if HKHealthStore.isHealthDataAvailable() {
             
             do {
                 let sex = try healthStore.biologicalSex()
-                print("Biological sex = \(sex.description)")
-            } catch {
                 
+                var gender = ""
+                
+                switch sex.biologicalSex {
+                case .male:
+                    gender = "🙋‍♂️"
+                case .female:
+                    gender = "💁‍♀️"
+                default:
+                    gender = "😊"
+                }
+                
+                print("Biological sex = \(gender)")
+                
+                
+                
+            } catch {
+                print("Encountered error = \(error)")
             }
             
         }

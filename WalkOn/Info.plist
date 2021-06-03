@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>WalkOn</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Need access to health records</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Need access to share workout rotues</string>
 	<key>NSHealthUpdateUsageDescription</key>
