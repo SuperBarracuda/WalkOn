@@ -39,7 +39,9 @@ class HealthManager {
                 
                 print("Biological sex = \(gender)")
                 
-                getSteps()
+                getDistanceWalked()
+                
+                getStepCount()
                 
             } catch {
                 print("Encountered error = \(error)")
@@ -48,7 +50,7 @@ class HealthManager {
         }
     }
     
-    func getSteps() {
+    func getDistanceWalked() {
         let startDate = Date.init(timeIntervalSince1970: TimeInterval(1622246400))//Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
 
         let endDate = Date()
@@ -74,6 +76,50 @@ class HealthManager {
                 }
             }
         healthStore?.execute(statisticsSumQuery)
+    }
+    
+    func getStepCount() {
+        //   Define the Step Quantity Type
+          let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+
+          //   Get the start of the day
+        
+         let startDate = Date.init(timeIntervalSince1970: TimeInterval(1622246400))//Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+
+          let date = Date()
+
+          //  Set the Predicates & Interval
+          let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+          var interval = DateComponents()
+          interval.day = 1
+
+          //  Perform the Query
+          let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval)
+
+          query.initialResultsHandler = { query, results, error in
+
+              if error != nil {
+                  return
+              }
+            var totalSteps: Double = 0
+              if let myResults = results{
+                  myResults.enumerateStatistics(from: startDate, to: date) {
+                      statistics, stop in
+
+                      if let quantity = statistics.sumQuantity() {
+
+                          let steps = quantity.doubleValue(for: HKUnit.count())
+
+                          totalSteps += steps
+                      }
+                  }
+              }
+            print("Steps = \(totalSteps)")
+
+
+          }
+
+          healthStore?.execute(query)
     }
     
 }
