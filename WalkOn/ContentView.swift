@@ -1,16 +1,14 @@
-//
-//  ContentView.swift
-//  WalkOn
-//
-//  Created by Tristram Bates on 17/05/2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Distance walked")
+                .font(.title)
+            Text(".... Miles")
+                .font(.body)
+        }
+            
     }
 }
 
