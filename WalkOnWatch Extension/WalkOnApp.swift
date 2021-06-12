@@ -18,4 +18,8 @@ struct WalkOnApp: App {
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
+    
+    init() {
+        _ = HealthManager()
+    }
 }
