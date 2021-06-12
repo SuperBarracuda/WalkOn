@@ -7,10 +7,14 @@ extension Date {
     }
 }
 
+let sharedHealthManager = HealthManager()
+
 class HealthManager {
     
     var healthStore: HKHealthStore?
     var sevenDaysAgo: Date?
+    
+    var distanceWalked: Double?
     
     init() {
         
@@ -84,6 +88,7 @@ class HealthManager {
                         let totalDistance = sumQuantity.doubleValue(for:.mile())
                         distanceTotalLength = totalDistance
                         print("Total distance covered = \(String(format:"%.1f", locale: Locale.current, distanceTotalLength)) Miles")
+                        self.distanceWalked = distanceTotalLength
                     }
                 }
             }
