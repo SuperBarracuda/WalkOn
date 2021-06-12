@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A4D0F9F2674DDC100151F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D0F9E2674DDC100151F31 /* Assets.xcassets */; };
+		6A4D0FA62674DDC100151F31 /* WalkOnWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A4D0FA52674DDC100151F31 /* WalkOnWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6A4D0FAB2674DDC100151F31 /* WalkOnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D0FAA2674DDC100151F31 /* WalkOnApp.swift */; };
+		6A4D0FAF2674DDC100151F31 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D0FAE2674DDC100151F31 /* NotificationController.swift */; };
+		6A4D0FB12674DDC100151F31 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D0FB02674DDC100151F31 /* NotificationView.swift */; };
+		6A4D0FB32674DDC100151F31 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D0FB22674DDC100151F31 /* ComplicationController.swift */; };
+		6A4D0FB52674DDC200151F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D0FB42674DDC200151F31 /* Assets.xcassets */; };
+		6A4D0FB82674DDC200151F31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D0FB72674DDC200151F31 /* Preview Assets.xcassets */; };
+		6A4D0FBD2674DDC200151F31 /* WalkOnWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6A4D0F9C2674DDC100151F31 /* WalkOnWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6A4D0FCE2674DE7100151F31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC40F02265295EE00EC5E40 /* ContentView.swift */; };
 		6A76445826529F1600CE8C7E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A76445726529F1600CE8C7E /* HealthKit.framework */; };
 		6A76445A26529F7A00CE8C7E /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A76445926529F7A00CE8C7E /* HealthManager.swift */; };
 		6AC40F01265295EE00EC5E40 /* WalkOnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC40F00265295EE00EC5E40 /* WalkOnApp.swift */; };
@@ -17,6 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6A4D0FA72674DDC100151F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC40EF5265295EE00EC5E40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4D0FA42674DDC100151F31;
+			remoteInfo = "WalkOnWatch Extension";
+		};
+		6A4D0FBB2674DDC200151F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC40EF5265295EE00EC5E40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4D0F9B2674DDC100151F31;
+			remoteInfo = WalkOnWatch;
+		};
 		6AC40F0F265295EF00EC5E40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AC40EF5265295EE00EC5E40 /* Project object */;
@@ -26,7 +50,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6A4D0FC12674DDC200151F31 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6A4D0FA62674DDC100151F31 /* WalkOnWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4D0FC52674DDC200151F31 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6A4D0FBD2674DDC200151F31 /* WalkOnWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6A4D0F9C2674DDC100151F31 /* WalkOnWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkOnWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4D0F9E2674DDC100151F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4D0FA02674DDC100151F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4D0FA52674DDC100151F31 /* WalkOnWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WalkOnWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4D0FAA2674DDC100151F31 /* WalkOnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkOnApp.swift; sourceTree = "<group>"; };
+		6A4D0FAC2674DDC100151F31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6A4D0FAE2674DDC100151F31 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		6A4D0FB02674DDC100151F31 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		6A4D0FB22674DDC100151F31 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		6A4D0FB42674DDC200151F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4D0FB72674DDC200151F31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6A4D0FB92674DDC200151F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4D0FBA2674DDC200151F31 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		6A76445526529F1600CE8C7E /* WalkOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkOn.entitlements; sourceTree = "<group>"; };
 		6A76445726529F1600CE8C7E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		6A76445926529F7A00CE8C7E /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -42,6 +104,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6A4D0FA22674DDC100151F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AC40EFA265295EE00EC5E40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +129,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A4D0F9D2674DDC100151F31 /* WalkOnWatch */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D0F9E2674DDC100151F31 /* Assets.xcassets */,
+				6A4D0FA02674DDC100151F31 /* Info.plist */,
+			);
+			path = WalkOnWatch;
+			sourceTree = "<group>";
+		};
+		6A4D0FA92674DDC100151F31 /* WalkOnWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D0FAA2674DDC100151F31 /* WalkOnApp.swift */,
+				6A4D0FAC2674DDC100151F31 /* ContentView.swift */,
+				6A4D0FAE2674DDC100151F31 /* NotificationController.swift */,
+				6A4D0FB02674DDC100151F31 /* NotificationView.swift */,
+				6A4D0FB22674DDC100151F31 /* ComplicationController.swift */,
+				6A4D0FB42674DDC200151F31 /* Assets.xcassets */,
+				6A4D0FB92674DDC200151F31 /* Info.plist */,
+				6A4D0FBA2674DDC200151F31 /* PushNotificationPayload.apns */,
+				6A4D0FB62674DDC200151F31 /* Preview Content */,
+			);
+			path = "WalkOnWatch Extension";
+			sourceTree = "<group>";
+		};
+		6A4D0FB62674DDC200151F31 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D0FB72674DDC200151F31 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		6A76445626529F1600CE8C7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +175,8 @@
 			children = (
 				6AC40EFF265295EE00EC5E40 /* WalkOn */,
 				6AC40F11265295EF00EC5E40 /* WalkOnTests */,
+				6A4D0F9D2674DDC100151F31 /* WalkOnWatch */,
+				6A4D0FA92674DDC100151F31 /* WalkOnWatch Extension */,
 				6AC40EFE265295EE00EC5E40 /* Products */,
 				6A76445626529F1600CE8C7E /* Frameworks */,
 			);
@@ -83,6 +187,8 @@
 			children = (
 				6AC40EFD265295EE00EC5E40 /* WalkOn.app */,
 				6AC40F0E265295EF00EC5E40 /* WalkOnTests.xctest */,
+				6A4D0F9C2674DDC100151F31 /* WalkOnWatch.app */,
+				6A4D0FA52674DDC100151F31 /* WalkOnWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +227,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6A4D0F9B2674DDC100151F31 /* WalkOnWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4D0FC22674DDC200151F31 /* Build configuration list for PBXNativeTarget "WalkOnWatch" */;
+			buildPhases = (
+				6A4D0F9A2674DDC100151F31 /* Resources */,
+				6A4D0FC12674DDC200151F31 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A4D0FA82674DDC100151F31 /* PBXTargetDependency */,
+			);
+			name = WalkOnWatch;
+			productName = WalkOnWatch;
+			productReference = 6A4D0F9C2674DDC100151F31 /* WalkOnWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6A4D0FA42674DDC100151F31 /* WalkOnWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4D0FBE2674DDC200151F31 /* Build configuration list for PBXNativeTarget "WalkOnWatch Extension" */;
+			buildPhases = (
+				6A4D0FA12674DDC100151F31 /* Sources */,
+				6A4D0FA22674DDC100151F31 /* Frameworks */,
+				6A4D0FA32674DDC100151F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WalkOnWatch Extension";
+			productName = "WalkOnWatch Extension";
+			productReference = 6A4D0FA52674DDC100151F31 /* WalkOnWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		6AC40EFC265295EE00EC5E40 /* WalkOn */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AC40F22265295EF00EC5E40 /* Build configuration list for PBXNativeTarget "WalkOn" */;
@@ -128,10 +268,12 @@
 				6AC40EF9265295EE00EC5E40 /* Sources */,
 				6AC40EFA265295EE00EC5E40 /* Frameworks */,
 				6AC40EFB265295EE00EC5E40 /* Resources */,
+				6A4D0FC52674DDC200151F31 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A4D0FBC2674DDC200151F31 /* PBXTargetDependency */,
 			);
 			name = WalkOn;
 			productName = WalkOn;
@@ -162,9 +304,15 @@
 		6AC40EF5265295EE00EC5E40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					6A4D0F9B2674DDC100151F31 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					6A4D0FA42674DDC100151F31 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					6AC40EFC265295EE00EC5E40 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -189,11 +337,30 @@
 			targets = (
 				6AC40EFC265295EE00EC5E40 /* WalkOn */,
 				6AC40F0D265295EF00EC5E40 /* WalkOnTests */,
+				6A4D0F9B2674DDC100151F31 /* WalkOnWatch */,
+				6A4D0FA42674DDC100151F31 /* WalkOnWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6A4D0F9A2674DDC100151F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D0F9F2674DDC100151F31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4D0FA32674DDC100151F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D0FB82674DDC200151F31 /* Preview Assets.xcassets in Resources */,
+				6A4D0FB52674DDC200151F31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AC40EFB265295EE00EC5E40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +380,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6A4D0FA12674DDC100151F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D0FAF2674DDC100151F31 /* NotificationController.swift in Sources */,
+				6A4D0FCE2674DE7100151F31 /* ContentView.swift in Sources */,
+				6A4D0FB32674DDC100151F31 /* ComplicationController.swift in Sources */,
+				6A4D0FAB2674DDC100151F31 /* WalkOnApp.swift in Sources */,
+				6A4D0FB12674DDC100151F31 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AC40EF9265295EE00EC5E40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +413,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6A4D0FA82674DDC100151F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4D0FA42674DDC100151F31 /* WalkOnWatch Extension */;
+			targetProxy = 6A4D0FA72674DDC100151F31 /* PBXContainerItemProxy */;
+		};
+		6A4D0FBC2674DDC200151F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4D0F9B2674DDC100151F31 /* WalkOnWatch */;
+			targetProxy = 6A4D0FBB2674DDC200151F31 /* PBXContainerItemProxy */;
+		};
 		6AC40F10265295EF00EC5E40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6AC40EFC265295EE00EC5E40 /* WalkOn */;
@@ -242,6 +431,96 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6A4D0FBF2674DDC200151F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WalkOnWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WalkOnWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Tris.WalkOn.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		6A4D0FC02674DDC200151F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WalkOnWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WalkOnWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Tris.WalkOn.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		6A4D0FC32674DDC200151F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
+				IBSC_MODULE = WalkOnWatch_Extension;
+				INFOPLIST_FILE = WalkOnWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Tris.WalkOn.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		6A4D0FC42674DDC200151F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5XL3YJX2;
+				IBSC_MODULE = WalkOnWatch_Extension;
+				INFOPLIST_FILE = WalkOnWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Tris.WalkOn.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		6AC40F20265295EF00EC5E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -453,6 +732,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6A4D0FBE2674DDC200151F31 /* Build configuration list for PBXNativeTarget "WalkOnWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4D0FBF2674DDC200151F31 /* Debug */,
+				6A4D0FC02674DDC200151F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4D0FC22674DDC200151F31 /* Build configuration list for PBXNativeTarget "WalkOnWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4D0FC32674DDC200151F31 /* Debug */,
+				6A4D0FC42674DDC200151F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6AC40EF8265295EE00EC5E40 /* Build configuration list for PBXProject "WalkOn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
